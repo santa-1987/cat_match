@@ -1,0 +1,21 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "serverlessrepo-alexa-skil-alexaskillskitnodejsfact-4PN0H80I0K0G",
+          "sourceDir": "lambda/us-east-1_serverlessrepo-alexa-skil-alexaskillskitnodejsfact-4PN0H80I0K0G"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "locales": {
+        "en-IN": {
+          "name": "cat match"
+        }
+      }
+    }
+  }
+}

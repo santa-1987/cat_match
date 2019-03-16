@@ -1,0 +1,256 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "cat match",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CatIntent",
+          "slots": [
+            {
+              "name": "size",
+              "type": "sizeSlot",
+              "samples": [
+                "{size}",
+                "a {size} cat",
+                "{size} cat",
+                " give me a {size} cat "
+              ]
+            },
+            {
+              "name": "fur",
+              "type": "furSlot"
+            },
+            {
+              "name": "country",
+              "type": "AMAZON.Country"
+            },
+            {
+              "name": "temperant",
+              "type": "temperantSlot"
+            }
+          ],
+          "samples": [
+            "i need a {temperant} cat",
+            "give an {country} cat",
+            "buy me a cat",
+            "give me a {fur} cat",
+            "give me a {size} cat",
+            "I want a {size} {fur} haired cat",
+            "I want a {size} cat"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "medium"
+              }
+            },
+            {
+              "name": {
+                "value": "medium-sized"
+              }
+            },
+            {
+              "name": {
+                "value": "large enough"
+              }
+            },
+            {
+              "name": {
+                "value": "large"
+              }
+            },
+            {
+              "name": {
+                "value": "smaller"
+              }
+            },
+            {
+              "name": {
+                "value": "very small"
+              }
+            },
+            {
+              "name": {
+                "value": "small"
+              }
+            },
+            {
+              "name": {
+                "value": "tiny"
+              }
+            }
+          ],
+          "name": "sizeSlot"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "too long"
+              }
+            },
+            {
+              "name": {
+                "value": "short"
+              }
+            },
+            {
+              "name": {
+                "value": "long"
+              }
+            }
+          ],
+          "name": "furSlot"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "enraged"
+              }
+            },
+            {
+              "name": {
+                "value": "outraged"
+              }
+            },
+            {
+              "name": {
+                "value": "exasperated"
+              }
+            },
+            {
+              "name": {
+                "value": "worried"
+              }
+            },
+            {
+              "name": {
+                "value": "frustrated"
+              }
+            },
+            {
+              "name": {
+                "value": "annoyed"
+              }
+            },
+            {
+              "name": {
+                "value": "angry"
+              }
+            }
+          ],
+          "name": "temperantSlot"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CatIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "size",
+              "type": "sizeSlot",
+              "elicitationRequired": true,
+              "confirmationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.1511003577297.1239386105713",
+                "elicitation": "Elicit.Slot.1511003577297.1239386105713"
+              }
+            },
+            {
+              "name": "fur",
+              "type": "furSlot",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.653483476996.1002214351997"
+              }
+            },
+            {
+              "name": "country",
+              "type": "AMAZON.Country",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "temperant",
+              "type": "temperantSlot",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1511003577297.1239386105713",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "do you want a long, short cat ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what sized cat do you want"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1511003577297.1239386105713",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "You have chosed a {size} cat"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.653483476996.1002214351997",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "do you want a long short cat"
+          },
+          {
+            "type": "PlainText",
+            "value": "what fur do you want ?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "4"
+}
