@@ -11,14 +11,10 @@ const GetCatMatchHandler = {
       //   && request.intent.name === 'GetNewFactIntent');
   },
   handle(handlerInput) {
-    const speechOutput = {
-      "type": "SSML",
-          "ssml": "<speak>Welcome to Cat Match  !!!</speak>"
-    }
     // const factArr = data;
     // const factIndex = Math.floor(Math.random() * factArr.length);
     // const randomFact = factArr[factIndex];
-    // const speechOutput = "Welcome to Cat Match  !!!";
+    const speechOutput = "<speak>Welcome to Cat Match at ASK workshop !!!</speak>";
 
     return handlerInput.responseBuilder
       .speak(speechOutput)
